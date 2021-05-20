@@ -1,1 +1,27 @@
 /* You can customize theme styles here */
+
+/* The alert message box */
+.alert {
+    padding: 20px;
+    background-color: #04AA6D; /* Red */
+    color: white;
+    margin: 15px 0;
+    display: none;
+  }
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }

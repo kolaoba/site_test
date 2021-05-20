@@ -494,24 +494,24 @@
 <section id="contact" class="section section--contact pt-0">
     <div class="container">
         <div class="contact">
-            <h2>Contact</h2>
+            <h2 onclick="handleNotification()">Contact</h2>
             <div class="row pt-2">
                 <div class="col-12 col-lg-7">
-                    <form onsubmit="postData('https://safe-bastion-73856.herokuapp.com/contact', objToSend)">
+                    <form action = "#" onsubmit="postData();return false">
                         <div class="row">
                             <div class="col-12 col-sm-6">
-                                <input type="text" name="" id="full_name"
-                                       placeholder="Full Name"/>
+                                <input type="text" id="full_name" required 
+                                       placeholder="Full Name">
                             </div>
                             <div class="col-12 col-sm-6">
-                                <input type="text" name="" id="email"
-                                       placeholder="Email Address"/>
+                                <input type="text" id="email" required
+                                       placeholder="Email Address">
                             </div>
                         </div>
                         <div class="row pt-4">
                             <div class="col-12">
-                                <textarea name="" id="message"
-                                          cols="30" rows="3" placeholder="Type Your Message Here"></textarea>
+                                <input type="text" name="" id="message" required
+                                          cols="30" rows="3" placeholder="Type Your Message Here" >
                             </div>
                         </div>
                         <div class="row pt-4">
@@ -522,6 +522,10 @@
                                 </button>
                             </div>
                         </div>
+						<div class="alert" id='alert'>
+							<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+							<strong>Success!</strong> Your message has been received.
+						</div>
                     </form>
                 </div>
                 <div class="col-12 col-lg-5 contact__info">
@@ -584,18 +588,6 @@
 <script src='/js/sticky-header.js'></script>
 <script src='/js/library/smooth-scroll.polyfills.min.js'></script>
 <script src='/js/library/fontfaceobserver.js'></script>
-
-<script>
-  const full_name = document.querySelector('#full_name').value
-  const email = document.querySelector('#email').value
-  const message = document.querySelector('#message').value
-
-  const objToSend = {
-    full_name,
-    email,
-    message
-}
-</script>
 
 <script>
   (function(w) {
